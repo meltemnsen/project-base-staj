@@ -1,0 +1,17 @@
+# Gün 3: Fonksiyonlar
+# İki sayıyı toplayan basit bir fonksiyon
+def topla(sayi1, sayi2):
+    """İki sayıyı toplar ve sonucu döndürür."""
+    return sayi1 + sayi2
+
+# Fonksiyonu çağırma
+sonuc = topla(25, 75)
+print(f"Toplam sonucu: {sonuc}")
+
+# Başka bir fonksiyon örneği
+def selamla(isim="Ziyaretçi"):
+    """İsim parametresine göre kişiyi selamlar."""
+    print(f"Merhaba, {isim}!")
+
+selamla("Ayşe")
+selamla() # Varsayılan parametre ile çağırma
