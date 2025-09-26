@@ -1,0 +1,15 @@
+# Gün 10: Flask ile Web Geliştirme
+from flask import Flask
+
+# Flask uygulamasını oluşturma
+app = Flask(_name_)
+
+# Temel bir rota tanımlama
+@app.route('/')
+def hello_world():
+    return '<h1>Merhaba, Flask Dünyası!</h1>'
+
+# Uygulamayı çalıştırma
+if _name_ == '_main_':
+    # Flask sunucusunu debug modunda çalıştırın
+    app.run(debug=True)
