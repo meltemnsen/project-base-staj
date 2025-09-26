@@ -1,0 +1,17 @@
+# Gün 7: Matplotlib ile Veri Görselleştirme
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Örnek veri oluşturma
+aylar = ["Ocak", "Şubat", "Mart", "Nisan"]
+satislar = [150, 180, 220, 250]
+
+# Çizgi grafiği oluşturma
+plt.figure(figsize=(8, 5))
+plt.plot(aylar, satislar, marker='o', linestyle='--', color='b')
+plt.title("Aylara Göre Satış Grafiği")
+plt.xlabel("Aylar")
+plt.ylabel("Satış Miktarı")
+plt.grid(True)
+plt.show()
