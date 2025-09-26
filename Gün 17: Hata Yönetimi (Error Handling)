@@ -1,0 +1,15 @@
+# Gün 17: Hata Yönetimi (Error Handling)
+try:
+    # Hata verebilecek bir işlem
+    sayi = int(input("Lütfen bir sayı girin: "))
+    sonuc = 10 / sayi
+    print(f"Sonuç: {sonuc}")
+except ValueError:
+    # Metin girildiğinde bu hata yakalanır
+    print("Hata: Geçersiz giriş. Lütfen bir sayı girin.")
+except ZeroDivisionError:
+    # Sayı sıfıra bölündüğünde bu hata yakalanır
+    print("Hata: Bir sayı sıfıra bölünemez.")
+except Exception as e:
+    # Diğer tüm hatalar bu blokta yakalanır
+    print(f"Beklenmeyen bir hata oluştu: {e}")
