@@ -1,0 +1,28 @@
+# Gün 20: Dosya Otomasyonu
+import os
+import shutil
+
+# Mevcut klasörde örnek dosyalar oluştur
+# (Bu kod, gerçek dosyaları yönetir, dikkatli kullanın)
+# open("deneme.txt", "w").close()
+# open("rapor.pdf", "w").close()
+
+# Dosyaları düzenleyecek ana fonksiyon
+def dosyalari_duzenle(klasor_yolu):
+    dosya_listesi = os.listdir(klasor_yolu)
+    
+    for dosya_adi in dosya_listesi:
+        if os.path.isfile(os.path.join(klasor_yolu, dosya_adi)):
+            dosya_uzantisi = dosya_adi.split('.')[-1]
+            yeni_klasor_adi = dosya_uzantisi.upper() + "_DOSYALARI"
+            
+            # Yeni klasörü oluştur
+            if not os.path.exists(yeni_klasor_adi):
+                os.makedirs(yeni_klasor_adi)
+            
+            # Dosyayı yeni klasöre taşı
+            shutil.move(os.path.join(klasor_yolu, dosya_adi), os.path.join(yeni_klasor_adi, dosya_adi))
+            print(f"'{dosya_adi}' dosyası '{yeni_klasor_adi}' klasörüne taşındı.")
+
+# Güncel klasörü düzenleme
+dosyalari_duzenle(os.getcwd())
