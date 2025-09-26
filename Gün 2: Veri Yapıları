@@ -1,0 +1,20 @@
+# Gün 2: Veri Yapıları
+# Liste kullanımı
+meyveler = ["elma", "armut", "muz"]
+print(f"İlk meyve: {meyveler[0]}")
+meyveler.append("kiraz")
+print(f"Yeni liste: {meyveler}")
+
+# Demet (Tuple) kullanımı - değiştirilemez
+koordinatlar = (10, 20)
+print(f"Koordinatlar: {koordinatlar}")
+
+# Sözlük (Dictionary) kullanımı
+personel = {
+    "isim": "Ahmet Yılmaz",
+    "departman": "Yazılım",
+    "maas": 50000
+}
+print(f"Personelin departmanı: {personel['departman']}")
+personel["maas"] = 55000
+print(f"Yeni maaş: {personel['maas']}")
