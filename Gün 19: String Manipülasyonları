@@ -1,0 +1,14 @@
+# Gün 19: String Manipülasyonları
+metin = "  Python ile programlama çok keyifli!  "
+
+# Başındaki ve sonundaki boşlukları temizleme
+temiz_metin = metin.strip()
+print(f"Boşluklar temizlendi: '{temiz_metin}'")
+
+# Tüm harfleri büyük harfe dönüştürme
+buyuk_harfli = temiz_metin.upper()
+print(f"Büyük harfli: {buyuk_harfli}")
+
+# Bir kelimeyi başka bir kelimeyle değiştirme
+yeni_metin = temiz_metin.replace("keyifli", "harika")
+print(f"Kelime değiştirildi: {yeni_metin}")
