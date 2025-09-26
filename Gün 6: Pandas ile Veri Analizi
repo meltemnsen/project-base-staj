@@ -1,0 +1,24 @@
+# Gün 6: Pandas ile Veri Analizi
+import pandas as pd
+
+# Örnek bir CSV dosyası oluşturun ve bu kodu çalıştırın.
+# personel.csv
+# isim,departman,maas
+# Ali,Yazılım,50000
+# Ayşe,Pazarlama,45000
+# Veli,Yazılım,55000
+
+# CSV dosyasını okuma
+df = pd.read_csv('personel.csv')
+
+# DataFrame'in ilk 5 satırını görüntüleme
+print("İlk 5 satır:")
+print(df.head())
+
+# Sütun tipleri ve eksik veriler hakkında bilgi alma
+print("\nDataFrame bilgisi:")
+print(df.info())
+
+# Sayısal sütunların istatistiksel özetini görüntüleme
+print("\nİstatistiksel özet:")
+print(df.describe())
