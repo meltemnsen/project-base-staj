@@ -1,0 +1,47 @@
+# app.py
+from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+app = Flask(_name_)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///notlar.db'
+db = SQLAlchemy(app)
+
+# Not Modeli
+class Not(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    baslik = db.Column(db.String(100), nullable=False)
+    icerik = db.Column(db.Text, nullable=False)
+    tarih = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def _repr_(self):
+        return f"<Not '{self.baslik}'>"
+
+with app.app_context():
+    db.create_all()
+
+@app.route('/')
+def home():
+    notlar = Not.query.order_by(Not.tarih.desc()).all()
+    return render_template('index.html', notlar=notlar)
+
+@app.route('/yeni_not', methods=['GET', 'POST'])
+def yeni_not():
+    if request.method == 'POST':
+        baslik = request.form['baslik']
+        icerik = request.form['icerik']
+        yeni_not = Not(baslik=baslik, icerik=icerik)
+        db.session.add(yeni_not)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('yeni_not.html')
+
+@app.route('/not/<int:not_id>/sil', methods=['POST'])
+def sil_not(not_id):
+    not_sil = Not.query.get_or_404(not_id)
+    db.session.delete(not_sil)
+    db.session.commit()
+    return redirect(url_for('home'))
+
+if _name_ == '_main_':
+    app.run(debug=True)
