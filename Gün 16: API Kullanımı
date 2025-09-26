@@ -1,0 +1,16 @@
+# Gün 16: API Kullanımı
+import requests
+import json
+
+# Örnek bir API adresi
+url = "https://api.github.com/users/google"
+response = requests.get(url)
+
+# API'den gelen veriyi JSON formatında alma
+if response.status_code == 200:
+    veri = response.json()
+    print(f"Kullanıcı adı: {veri['login']}")
+    print(f"Ad-Soyad: {veri['name']}")
+    print(f"Takipçi sayısı: {veri['followers']}")
+else:
+    print(f"Hata oluştu: {response.status_code}")
