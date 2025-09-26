@@ -1,0 +1,15 @@
+# Gün 12: Flask ile Form İşlemleri
+from flask import Flask, render_template, request
+
+app = Flask(_name_)
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        kullanici_adi = request.form.get('kullanici_adi')
+        sifre = request.form.get('sifre')
+        return f"Hoş geldiniz, {kullanici_adi}!"
+    return render_template('login.html')
+
+if _name_ == '_main_':
+    app.run(debug=True)
