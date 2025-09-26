@@ -1,0 +1,26 @@
+# Gün 8: Nesne Yönelimli Programlama (OOP)
+# Otomobil sınıfı tanımlama
+class Otomobil:
+    def _init_(self, marka, model, yil):
+        # Sınıfın özellikleri (attributes)
+        self.marka = marka
+        self.model = model
+        self.yil = yil
+        self.calisiyor = False
+
+    # Sınıfın metotları (methods)
+    def calistir(self):
+        self.calisiyor = True
+        print(f"{self.marka} {self.model} çalıştırıldı.")
+
+    def durdur(self):
+        self.calisiyor = False
+        print(f"{self.marka} {self.model} durduruldu.")
+
+# Sınıftan bir nesne oluşturma
+otomobil1 = Otomobil("Honda", "Civic", 2020)
+
+# Nesneye ait metotları çağırma
+otomobil1.calistir()
+print(f"Otomobilin durumu: {'Çalışıyor' if otomobil1.calisiyor else 'Çalışmıyor'}")
+otomobil1.durdur()
