@@ -1,0 +1,14 @@
+1.  *Yerel depoyu başlatma:*
+    ⁠ git init ⁠
+
+2.  *Dosyaları sahneleme alanına ekleme:*
+    ⁠ git add . ⁠
+
+3.  *Değişiklikleri kaydetme (commit):*
+    ⁠ git commit -m "İlk commit: Temel Python dosyaları eklendi." ⁠
+
+4.  *Uzak depoyu (GitHub) ekleme:*
+    ⁠ git remote add origin https://github.com/kullaniciadi/proje-adi.git ⁠
+
+5.  *Değişiklikleri uzak depoya gönderme:*
+    ⁠ git push -u origin main ⁠
