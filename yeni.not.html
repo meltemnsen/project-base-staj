@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Yeni Not Ekle</title>
+</head>
+<body>
+    <h1>Yeni Not Ekle</h1>
+    <form action="{{ url_for('yeni_not') }}" method="post">
+        <label for="baslik">Başlık:</label><br>
+        <input type="text" id="baslik" name="baslik"><br><br>
+        <label for="icerik">İçerik:</label><br>
+        <textarea id="icerik" name="icerik"></textarea><br><br>
+        <input type="submit" value="Kaydet">
+    </form>
+    <a href="{{ url_for('home') }}">Ana Sayfaya Dön</a>
+</body>
+</html>
