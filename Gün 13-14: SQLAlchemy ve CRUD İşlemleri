@@ -1,0 +1,33 @@
+# Gün 13-14: SQLAlchemy ve CRUD İşlemleri
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(_name_)
+# SQLite veritabanı bağlantısı
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+db = SQLAlchemy(app)
+
+# Veritabanı modeli (tablo yapısı)
+class Kullanici(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    kullanici_adi = db.Column(db.String(20), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def _repr_(self):
+        return f"Kullanici('{self.kullanici_adi}', '{self.email}')"
+
+# CRUD (Create, Read, Update, Delete) işlemleri
+with app.app_context():
+    # CREATE - Veritabanını oluşturma
+    db.create_all()
+
+    # READ - Yeni bir kullanıcı oluşturma
+    kullanici1 = Kullanici(kullanici_adi='can', email='can@example.com')
+    db.session.add(kullanici1)
+    db.session.commit()
+
+    # READ - Kullanıcıları listeleme
+    tum_kullanicilar = Kullanici.query.all()
+    print("Tüm kullanıcılar:")
+    for kullanici in tum_kullanicilar:
+        print(kullanici)
