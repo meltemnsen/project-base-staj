@@ -1,0 +1,19 @@
+# Gün 9: Kalıtım (Inheritance)
+# Otomobil sınıfından miras alan ElektrikliOtomobil sınıfı
+from gun8_oop_siniflar import Otomobil
+
+class ElektrikliOtomobil(Otomobil):
+    def _init_(self, marka, model, yil, batarya_kapasitesi):
+        # Ana sınıfın yapıcı metodunu çağırma
+        super()._init_(marka, model, yil)
+        # Alt sınıfa özgü yeni özellik
+        self.batarya_kapasitesi = batarya_kapasitesi
+
+    def sarj_et(self):
+        print(f"{self.marka} {self.model} şarj ediliyor.")
+
+# Alt sınıftan bir nesne oluşturma
+elektrikli_araba = ElektrikliOtomobil("Tesla", "Model S", 2023, 75)
+elektrikli_araba.calistir()
+elektrikli_araba.sarj_et()
+print(f"Batarya kapasitesi: {elektrikli_araba.batarya_kapasitesi} kWh")
