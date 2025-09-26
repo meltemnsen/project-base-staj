@@ -1,0 +1,19 @@
+# Gün 1: Temel Söz dizimi
+# Değişken tanımlama ve atama
+mesaj = "Merhaba, staj dünyası!"
+sayi = 10
+ondalikli_sayi = 3.14
+dogru_mu = True
+
+# Konsola çıktı yazdırma
+print(mesaj)
+print(f"Sayının değeri: {sayi}")
+print(f"Ondalıklı sayı: {ondalikli_sayi}")
+print(f"Doğru mu? {dogru_mu}")
+
+# Temel aritmetik işlemler
+toplam = 5 + 3
+fark = 10 - 2
+carpim = 4 * 6
+bolum = 20 / 5
+print(f"Toplam: {toplam}, Fark: {fark}, Çarpım: {carpim}, Bölüm: {bolum}")
