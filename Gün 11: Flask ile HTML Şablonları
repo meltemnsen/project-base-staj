@@ -1,0 +1,13 @@
+# Gün 11: Flask ile HTML Şablonları
+from flask import Flask, render_template
+
+app = Flask(_name_)
+
+@app.route('/')
+def home():
+    baslik = "Flask ile Şablon Kullanımı"
+    paragraf = "Bu sayfa, Python kodundan gelen verilerle dinamik olarak oluşturulmuştur."
+    return render_template('index.html', baslik=baslik, paragraf=paragraf)
+
+if _name_ == '_main_':
+    app.run(debug=True)
