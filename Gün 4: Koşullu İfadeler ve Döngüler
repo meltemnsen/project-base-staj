@@ -1,0 +1,20 @@
+# Gün 4: Koşullu İfadeler ve Döngüler
+# Koşullu ifade (if-elif-else) örneği
+yas = 19
+if yas >= 18:
+    print("Ehliyet alabilir.")
+elif yas >= 16:
+    print("Motorlu bisiklet ehliyeti alabilir.")
+else:
+    print("Ehliyet alamaz.")
+
+# For döngüsü örneği
+meyveler = ["elma", "armut", "kiraz"]
+for meyve in meyveler:
+    print(f"Bugün yediğim meyve: {meyve}")
+
+# While döngüsü örneği
+sayac = 0
+while sayac < 5:
+    print(f"Sayıcı: {sayac}")
+    sayac += 1
