@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Defteri</title>
+</head>
+<body>
+    <h1>Notlarım</h1>
+    <a href="{{ url_for('yeni_not') }}">Yeni Not Ekle</a>
+    <ul>
+        {% for notum in notlar %}
+        <li>
+            <h2>{{ notum.baslik }}</h2>
+            <p>{{ notum.icerik }}</p>
+            <small>Tarih: {{ notum.tarih.strftime('%Y-%m-%d %H:%M') }}</small>
+            <form action="{{ url_for('sil_not', not_id=notum.id) }}" method="post" style="display:inline;">
+                <input type="submit" value="Sil">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
